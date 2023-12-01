@@ -17,4 +17,12 @@ For example, given the URL https://www.example.com/path, the function should ret
 String extractDomain(String url) {
   final urlSplit = "${url.split('.com')[0]}.com".split('://')[1].split('.');
   return urlSplit.sublist(urlSplit.length - 2).join('.');
+
+  /*
+  String extractDomain(String url) {
+  final regex = RegExp(r'^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)');
+  var match = regex.firstMatch(url);
+  return match?.group(1) ?? '';
+  }
+   */
 }
